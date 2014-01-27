@@ -1,7 +1,11 @@
 defaultTasks 'test'
 apply plugin: 'java'
 repositories {mavenCentral()}
+services: 'mysql'
+
+before_script:
+    mysql: 'create database test;'
 
 dependencies {
-    testCompile 'junit:junit:4.11','org.jumpmind.symmetric.jdbc:mariadb-java-client:1.1.1'
+    testCompile 'junit:junit:4.11','org.jumpmind.symmetric.jdbc:mariadb-java-client:1.1.5'
 }
